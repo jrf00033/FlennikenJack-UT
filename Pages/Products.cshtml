@@ -1,0 +1,29 @@
+﻿@page
+@model FlennikenJack_UT.Pages.ProductsModel
+@{
+}
+@foreach (var product in Model.ProductList) //defining a var and refering to index model <img src="~/images/@product." class="card-img-top" style="height:200px" />
+{
+	
+	<div class="col-md-4 mb-1">
+		<div class="card">
+
+		
+			<div class="card-body">
+				<h5 class="card-title">@product.ProductName</h5>
+				<p class="card-text">
+					@product.Category
+						
+					Price: $@product.Price
+					Stock: @product.StockQuantity
+				</p>
+
+				<a asp-page="/ProductDetails" asp-route-id="@product.ProductID"
+				   class="btn btn-primary">View Details</a>
+				
+			</div>
+
+		</div>
+	</div>
+
+}
